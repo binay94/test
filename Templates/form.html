@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obesity Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #a8f0b4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #a2cef0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            margin-top: 20px;
+            width: 100px;
+            background-color: #4CAF50;
+            color: rgb(250, 249, 253);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        select,
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #b71e1e;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        select {
+            width: 200px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group select,
+        .form-group input[type="text"] {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Data for Prediction</h1>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Height">Height:</label>
+            <input type="text" id="Height" name="Height" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Weight">Weight:</label>
+            <input type="text" id="Weight" name="Weight" required>
+        </div>
+
+        <div class="form-group">
+            <label for="FCVC">FCVC:</label>
+            <input type="text" id="FCVC" name="FCVC" required>
+        </div>
+
+        <div class="form-group">
+            <label for="NCP">NCP:</label>
+            <input type="text" id="NCP" name="NCP" required>
+        </div>
+
+        <div class="form-group">
+            <label for="CH2O">CH2O:</label>
+            <input type="text" id="CH2O" name="CH2O" required>
+        </div>
+
+        <div class="form-group">
+            <label for="FAF">FAF:</label>
+            <input type="text" id="FAF" name="FAF" required>
+        </div>
+
+        <div class="form-group">
+            <label for="TUE">TUE:</label>
+            <input type="text" id="TUE" name="TUE" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="family_history_with_overweight">Family History with Overweight:</label>
+            <select id="family_history_with_overweight" name="family_history_with_overweight" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="FAVC">FAVC:</label>
+            <select id="FAVC" name="FAVC" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="CAEC">CAEC:</label>
+            <select id="CAEC" name="CAEC" required>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Always">Always</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="SMOKE">SMOKE:</label>
+            <select id="SMOKE" name="SMOKE" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="SCC">SCC:</label>
+            <select id="SCC" name="SCC" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="CALC">CALC:</label>
+            <select id="CALC" name="CALC" required>
+                <option value="no">No</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Always">Always</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="MTRANS">MTRANS:</label>
+            <select id="MTRANS" name="MTRANS" required>
+                <option value="Public_Transportation">Public Transportation</option>
+                <option value="Walking">Walking</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Motorbike">Motorbike</option>
+                <option value="Bike">Bike</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
